@@ -5,6 +5,11 @@
 
     RewriteEngine On
 
+	# Redirect from root to /home
+    RewriteCond %{HTTP_HOST} ^andrew-old\.loc$ [NC]
+    RewriteCond %{REQUEST_URI} ^/$
+    RewriteRule ^$ /home [L,R=301]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]

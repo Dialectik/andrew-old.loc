@@ -1,0 +1,9 @@
+p.intro {
+    font-size: 1.3em;
+}
+h2.intro {
+    font-size: 3.2em!important;
+}
+#intro footer {
+    margin-top: 1em!important;
+}
