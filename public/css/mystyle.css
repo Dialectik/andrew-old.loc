@@ -7,3 +7,110 @@ h2.intro {
 #intro footer {
     margin-top: 1em!important;
 }
+
+/* Иконка "гамбургер" */
+#hamburger-icon {
+    display: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    position: absolute;
+    left: 0.5em;
+    top: 0em;
+}
+
+#menu-popup {
+    display: none;
+}
+
+/* Скрытие меню на мобильных устройствах */
+@media screen and (max-width: 736px) {
+  #hamburger-icon {
+    display: block;
+  }
+
+  /* #menu-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 1000;
+  } */
+
+  .language-switcher {
+    color: #374852;
+    font-weight: 900;
+  }
+  
+  #menu-popup ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+
+
+/* Контейнер стрелок */
+#left-arrow, #right-arrow {
+    display: none;
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Позиционирование стрелок */
+#left-arrow {
+    left: 50px;
+}
+
+#right-arrow {
+    right: 10px;
+}
+
+/* Горизонтальная прокрутка для меню */
+#menu-items {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* для Firefox */
+    -ms-overflow-style: none; /* для IE и Edge */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+}
+
+/* Скрыть полосу прокрутки */
+#menu-items::-webkit-scrollbar {
+    display: none;
+}
+
+/* Показ стрелок на мобильных устройствах */
+@media screen and (max-width: 736px) {
+    #left-arrow, #right-arrow {
+        display: block;
+    }
+    
+    #menu-popup {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+        width: 90%;
+        padding: 10px;
+        color: white;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    #menu-popup li{
+        width: 100%;
+    }
+       
+    .language-switcher {
+        min-width: 28px;
+    }
+}
