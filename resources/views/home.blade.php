@@ -1,7 +1,19 @@
-<x-app>
+<x-app-layout>
     {{-- <div class="index-blog page-content page-blog"> --}}
-        {{-- @include('posts.main_news', ['latestPosts' => $latestPosts]) --}}
+        @include('home.intro')
 
-        {{-- @include('posts.all_news', ['title' => 'Все новости', 'allPosts' => $allPosts]) --}}
+        @include('home.about_me')
+
+        @include('home.path')
+
+        @include('home.poems')
+
+        @include('home.music')
+
+        @include('home.friends')
+
+        @include('home.family')
+
+        @include('home.links')
     {{-- </div> --}}
-</x-app>
+</x-app-layout>

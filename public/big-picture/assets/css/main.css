@@ -764,6 +764,40 @@ input, select, textarea {
 				background-image: url("images/arrow.svg");
 			}
 
+
+			.button.up,
+			button.up {
+				width: 5em;
+				height: 5em;
+				line-height: 4.5em;
+				padding: 0;
+				background-image: url("images/dark-arrow.svg");
+				background-position: center center;
+				background-repeat: no-repeat;
+				text-indent: -10em;
+				overflow: hidden;
+				transform: rotate(180deg);
+				color: #000000;
+			}
+			
+			footer.down {
+				position: absolute;
+				left: calc(50% - 50px);
+				bottom: 10px;
+			}
+
+			@media screen and (max-width: 1280px) {
+				footer.down {
+					left: calc(50% - 43px);
+				}
+			}
+
+			@media screen and (max-width: 736px) {
+				footer.down {
+					left: calc(50% - 40px);
+				}
+			}
+
 /* Form */
 
 	form {
@@ -1062,6 +1096,7 @@ input, select, textarea {
 			justify-content: center;
 			width: 100%;
 			margin-left: 0;
+			padding-bottom: 100px;
 		}
 
 			ul.actions.special li:first-child {
@@ -2084,6 +2119,11 @@ input, select, textarea {
 				width: 40%;
 			}
 
+			.main.style2 .content.width-full-slim {
+				width: 45%;
+				letter-spacing: 0.0em;
+			}
+
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -2128,9 +2168,9 @@ input, select, textarea {
 					display: none !important;
 				}
 
-				.main.style2 .button.anchored {
+				/* .main.style2 .button.anchored {
 					display: none;
-				}
+				} */
 
 				.main.style2 .content {
 					width: 100%;
@@ -2140,6 +2180,11 @@ input, select, textarea {
 					-webkit-transform: none;
 					-ms-transform: none;
 					transform: none;
+				}
+
+				.main.style2 .content.width-full-slim {
+					width: 100%;
+					max-width: 100%;
 				}
 
 			.main.style3 {
@@ -2241,9 +2286,9 @@ input, select, textarea {
 
 		}
 
-/* Intro */
+/* Intro  */
 
-	#intro {
+	#intro.home {
 		background: url("images/overlay.png"), url("../../images/intro.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
@@ -2251,23 +2296,131 @@ input, select, textarea {
 		background-repeat: repeat, no-repeat;
 	}
 
-/* One */
+	#intro.path {
+		background: url("images/overlay.png"), url("../../images/intro_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, bottom center;
+		background-repeat: repeat, no-repeat;
+	}
 
-	#one {
-		background: url("images/overlay.png"), url("../../images/one.jpg");
+/* path  */
+
+	#path.home {
+		background: url("images/overlay.png"), url("../../images/path.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
 
-/* Two */
+/* poems  */
 
-	#two {
-		background: url("images/overlay.png"), url("../../images/two.jpg");
+	#poems.home {
+		background: url("images/overlay.png"), url("../../images/poems.jpg");
 		background-size: 256px 256px, cover;
 		background-attachment: fixed, fixed;
 		background-position: top left, center center;
 	}
+
+/* music  */
+
+	#music.home {
+		background: url("images/overlay.png"), url("../../images/music.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* friends  */
+
+	#friends.home {
+		background: url("images/overlay.png"), url("../../images/friends.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* family  */
+
+	#family.home {
+		background: url("images/overlay.png"), url("../../images/family.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* start  */
+
+	#start.path {
+		background: url("images/overlay.png"), url("../../images/start1_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_one  */
+
+	#step_one.path {
+		background: url("images/overlay.png"), url("../../images/step_one_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_two  */
+
+	#step_two.path {
+		background: url("images/overlay.png"), url("../../images/step_two_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_three  */
+
+	#step_three.path {
+		background: url("images/overlay.png"), url("../../images/step_three_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_four  */
+
+	#step_four.path {
+		background: url("images/overlay.png"), url("../../images/step_four_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_five  */
+
+	#step_five.path {
+		background: url("images/overlay.png"), url("../../images/step_five_path.jpg");
+		background-size: 256px 256px, cover;
+		background-attachment: fixed, fixed;
+		background-position: top left, center center;
+	}
+
+/* step_seven  */
+
+#step_seven.path {
+	background: url("images/overlay.png"), url("../../images/step_seven_path.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
+
+/* step_nine  */
+
+#step_nine.path {
+	background: url("images/overlay.png"), url("../../images/step_nine_path.jpg");
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+}
+
 
 /* Contact */
 
@@ -2306,6 +2459,48 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#contact .box {
+				padding: 1em 1em 2em 1em;
+			}
+
+		}
+
+/* links home */
+
+	#links {
+		overflow: hidden;
+		padding-bottom: 0;
+	}
+
+		#links .box {
+			-moz-transition: -moz-transform 1s ease;
+			-webkit-transition: -webkit-transform 1s ease;
+			-ms-transition: -ms-transform 1s ease;
+			transition: transform 1s ease;
+			-moz-transform: translateY(0);
+			-webkit-transform: translateY(0);
+			-ms-transform: translateY(0);
+			transform: translateY(0);
+			position: relative;
+		}
+
+		#links.inactive .box {
+			-moz-transform: translateY(100%);
+			-webkit-transform: translateY(100%);
+			-ms-transform: translateY(100%);
+			transform: translateY(100%);
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#links .box {
+				padding: 1.5em 1.5em 2em 1.5em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#links .box {
 				padding: 1em 1em 2em 1em;
 			}
 

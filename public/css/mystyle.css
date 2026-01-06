@@ -114,3 +114,60 @@ h2.intro {
         min-width: 28px;
     }
 }
+
+/* Заголовки с гиперссылкой */
+.header-link a {
+    position: relative;
+    color: #6691bc;
+    transition: color 0.3s ease;
+}
+.header-link {
+    color: #6691bc;
+}
+
+.header-link a:hover {
+    color: #0c4074;
+}
+
+
+/* Кастомная подсказка (если нужен собственный стиль вместо title) */
+
+.tooltip a[data-tooltip]:hover::after {
+    content: attr(data-tooltip); /* Используем текст из атрибута */
+    position: absolute;
+    top: 100%; /* Под ссылкой */
+    left: 50%; /* Центрируем по горизонтали */
+    /* transform: translateX(-50%); */
+    /* background-color: #797f83; */
+    background-color: #98c593;
+    color: #fff; /* Белый текст */
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px; /* Сглаженные углы */
+    white-space: nowrap; /* Отключаем перенос текста */
+    font-size: 20px; /* Читаемый размер текста */
+    margin-top: 5px; /* Отступ от ссылки */
+    opacity: 1; /* Полностью видимый при наведении */
+    visibility: visible;
+    transition: opacity 0.2s ease; /* Плавное появление */
+    z-index: 1000; /* Выводим поверх других элементов */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Легкая тень для подсказки */
+    letter-spacing: +0.05em;
+    font-weight: 500;
+}
+
+.tooltip a[data-tooltip]::after {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Алерты */
+.alert.alert-success {
+    background-color: #98c593;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 20px;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}

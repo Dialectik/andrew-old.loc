@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\App;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PoemController;
+use App\Http\Controllers\MusicController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +44,10 @@ use App\Http\Controllers\LanguageController;
 // });
 
 
+
+// Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
 // Массив доступных локалей
 $supportedLocales = ['ru', 'en', 'uk'];
 
@@ -48,6 +55,84 @@ $supportedLocales = ['ru', 'en', 'uk'];
 Route::get('/', function () {
     return redirect()->route('page', ['locale' => 'ru', 'page' => 'home']);
 });
+
+
+// Маршрут для контроллера стихов
+Route::get('/{locale}/poems', function ($locale) {
+    // Список поддерживаемых локалей
+    $supportedLocales = ['ru', 'en', 'uk'];
+
+    // Убедитесь, что выбранная локаль допустима
+    if (in_array($locale, $supportedLocales)) {
+        session(['app_locale' => $locale]);  // Можно также сохранять локаль в сессии, если нужно
+        app()->setLocale($locale);           // Устанавливаем локаль в приложении
+    } else {
+        // Если локаль не поддерживается, можно перенаправить на дефолтную
+        app()->setLocale('ru');
+    }
+
+    // Далее, вызовем метод контроллера
+    return app(PoemController::class)->index();
+})->where('locale', 'ru|en|uk')->name('poems');
+
+Route::get('/{locale}/poems/{slug}', function ($locale, $slug) {
+    // Список поддерживаемых локалей
+    $supportedLocales = ['ru', 'en', 'uk'];
+
+    // Убедитесь, что выбранная локаль допустима
+    if (in_array($locale, $supportedLocales)) {
+        session(['app_locale' => $locale]);  // Можно также сохранять локаль в сессии, если нужно
+        app()->setLocale($locale);           // Устанавливаем локаль в приложении
+    } else {
+        // Если локаль не поддерживается, можно перенаправить на дефолтную
+        app()->setLocale('ru');
+    }
+
+    // Далее, вызовем метод контроллера
+    return app(PoemController::class)->show($locale, $slug);
+})->where('locale', 'ru|en|uk')->name('onepoem');    
+
+Route::get('/{locale}/ajaxpoem/{page}', [PoemController::class, 'getPagesAjax']);
+
+
+// Маршрут для контроллера музыки
+Route::get('/{locale}/music', function ($locale) {
+    // Список поддерживаемых локалей
+    $supportedLocales = ['ru', 'en', 'uk'];
+
+    // Убедитесь, что выбранная локаль допустима
+    if (in_array($locale, $supportedLocales)) {
+        session(['app_locale' => $locale]);  // Можно также сохранять локаль в сессии, если нужно
+        app()->setLocale($locale);           // Устанавливаем локаль в приложении
+    } else {
+        // Если локаль не поддерживается, можно перенаправить на дефолтную
+        app()->setLocale('ru');
+    }
+
+    // Далее, вызовем метод контроллера
+    return app(MusicController::class)->index();
+})->where('locale', 'ru|en|uk')->name('music');
+
+Route::get('/{locale}/music/{slug}', function ($locale, $slug) {
+    // Список поддерживаемых локалей
+    $supportedLocales = ['ru', 'en', 'uk'];
+
+    // Убедитесь, что выбранная локаль допустима
+    if (in_array($locale, $supportedLocales)) {
+        session(['app_locale' => $locale]);  // Можно также сохранять локаль в сессии, если нужно
+        app()->setLocale($locale);           // Устанавливаем локаль в приложении
+    } else {
+        // Если локаль не поддерживается, можно перенаправить на дефолтную
+        app()->setLocale('ru');
+    }
+
+    // Далее, вызовем метод контроллера
+    return app(MusicController::class)->show($locale, $slug);
+})->where('locale', 'ru|en|uk')->name('onemusic');    
+
+Route::get('/{locale}/ajaxmusic/{page}', [MusicController::class, 'getPagesAjax']);
+
+
 
 // Обобщенный маршрут для страниц с локалями
 Route::get('/{locale}/{page}', function ($locale, $page) use ($supportedLocales) {
