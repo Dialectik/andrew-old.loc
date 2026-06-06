@@ -155,10 +155,17 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+// Route::get('/.well-known/acme-challenge/{token}', function () {
+//     abort(404);
+// })->where('token', '.*');
+
 // Установите маршрут по умолчанию для русского языка
 Route::get('/{page}', function ($page) {
     // Исключаем страницы с префиксом "admin" из обработки локалей
-    if (!str_starts_with($page, 'admin')) {
+    if (
+        !str_starts_with($page, 'admin') &&
+        !str_starts_with($page, '.well-known/acme-challenge/')        
+    ) {
         return redirect()->route('page', ['locale' => 'ru', 'page' => $page]);
     }
 
