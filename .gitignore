@@ -14,3 +14,8 @@ yarn-error.log
 /.idea
 /.vscode
 .osp
+
+/docs/context/tasks
+/docs/context/*.local.*
+
+AGENTS.md
